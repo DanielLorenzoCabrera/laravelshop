@@ -18,5 +18,5 @@ use App\Http\Controllers\ProductoController;
     return view('index');
 });*/
 
-Route::resource('/', ProductoController::class);
+Route::resource('/productos', ProductoController::class);
 

@@ -14,7 +14,7 @@ class ProductoController extends Controller
      */
     public function index() {
         $productos = Producto::all(); // recuperamos del modelo post todos los post
-        return view('index', compact('productos'));
+        return view('producto.index', compact('productos'));
     }
 
     /**
@@ -46,7 +46,8 @@ class ProductoController extends Controller
      */
     public function show(Producto $producto)
     {
-        //
+
+        return view("producto.show", compact('producto'));
     }
 
     /**
@@ -80,6 +81,8 @@ class ProductoController extends Controller
      */
     public function destroy(Producto $producto)
     {
-        //
+        $producto->delete();
+        return redirect()->route('productos.index');
+
     }
 }

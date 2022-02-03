@@ -23,7 +23,7 @@ class ProductoSeeder extends Seeder
                 'sku' => $faker->unique()->numberBetween(1,1000),
                 "nombre" => $faker->title(),
                 'precio' => $faker->randomFloat(2,1,2000),
-                'imagen' => Str::random(60),
+                'imagen' => "https://picsum.photos/200",
                 "stock" => $faker->randomNumber(),
                 "categoria_id" => $faker->randomElement([1,2,3,4,5])
                 // fake.random_choices(elements=('a', 'b', 'c', 'd'))
@@ -32,4 +32,4 @@ class ProductoSeeder extends Seeder
 
     }
 }
-        
+
