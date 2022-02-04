@@ -2,6 +2,13 @@
 @section("contenido")
 <h1 class="text-white">Productos</h1>
 
+<form action="{{ url('/')}}" method="POST">
+    @csrf
+    <input type="text" class="form-control" placeholder="buscar" name="texto">
+    <button type="submit">Buscar</button>
+
+</form>
+
 <table class="table table-dark">
     <tr>
         <th>Nombre</th>
@@ -34,4 +41,5 @@
 
     @endforeach
 </table>
+{{$productos->links()}}
 @endsection

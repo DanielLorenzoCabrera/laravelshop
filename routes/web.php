@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\InicioController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +21,14 @@ use App\Http\Controllers\ProductoController;
 });*/
 
 Route::resource('/productos', ProductoController::class);
+/*
+Route::get('/', function(){
+    $produtos = Producto::paginate(2);
+    return view('index', compact('productos'));
+});
+*/
+
+Route::get('/', [InicioController::class, 'index']);
+//Route::post('/', [InicioController::class, 'buscar']);
+
 
